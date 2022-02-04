@@ -1,0 +1,11 @@
+$wide-card-height: 18.3333rem;
+$wide-card-margin: 5.0625rem;
+$wide-card-image-margin: 4.125rem;
+$wide-card-difference: $wide-card-height - $wide-card-margin;
+$base-font-size: 16;
+
+$em-size: 1rem;
+$break-mobile: 50 * $em-size;
+$break-tablet-portrait: 50 * $em-size;
+$break-tablet: 64 * $em-size;
+$break-medium: 75 * $em-size;
