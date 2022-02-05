@@ -1,8 +1,8 @@
-import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { ArticlePreviewType } from '../../types/queryTypes';
 import Text from '../Text';
+import TMLink from '../TMLink/TMLink';
 import './style.scss';
 
 interface ArticlePreviewProps extends ArticlePreviewType {
@@ -20,7 +20,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
 
   return (
     <div className={`${className}`}>
-      <Link className="preview" to={`/${slug}`}>
+      <TMLink className="preview" href={`/${slug}`}>
         <GatsbyImage
           image={image}
           alt={header.description ?? ''}
@@ -30,7 +30,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
           {title}
         </Text>
         <Text color="caption">{description.description}</Text>
-      </Link>
+      </TMLink>
     </div>
   );
 };
