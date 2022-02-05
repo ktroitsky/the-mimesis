@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { ArticlePreviewType } from '../../types/queryTypes';
@@ -13,18 +14,23 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
   header,
   className,
   description,
+  slug,
 }) => {
   const image = getImage(header.gatsbyImageData)!;
 
   return (
     <div className={`${className}`}>
-      <div className="preview">
-        <GatsbyImage image={image} alt={header.description ?? ''} />
+      <Link className="preview" to={`/${slug}`}>
+        <GatsbyImage
+          image={image}
+          alt={header.description ?? ''}
+          className="preview__image"
+        />
         <Text type="h3" fontWeight="700" className="preview__title">
           {title}
         </Text>
         <Text color="caption">{description.description}</Text>
-      </div>
+      </Link>
     </div>
   );
 };
