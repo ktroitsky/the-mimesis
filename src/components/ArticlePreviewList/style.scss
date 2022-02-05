@@ -1,5 +1,31 @@
-@import '../../theme/colors.scss';
+@import '../../theme/constants.scss';
+
+.wrapper {
+  margin: 80px 0;
+
+  &__title {
+    margin-bottom: 40px;
+    @media screen and (max-width: $break-tablet) {
+      text-align: center;
+    }
+  }
+}
 
 .list {
-  margin: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 30px;
+  justify-content: space-between;
+
+  @media screen and (max-width: $break-tablet) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__item {
+    width: 28%;
+    min-width: 350px;
+    min-height: 240px;
+    margin-bottom: 60px;
+  }
 }

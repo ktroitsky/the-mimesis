@@ -15,4 +15,8 @@ export type ArticlePreviewType = {
   };
   slug: string;
   id: string;
+  header: {
+    description?: string;
+    gatsbyImageData: any;
+  };
 };

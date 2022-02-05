@@ -49,6 +49,10 @@ export const query = graphql`
         }
         slug
         id
+        header {
+          description
+          gatsbyImageData(height: 240, width: 350)
+        }
       }
     }
   }
