@@ -1,23 +1,26 @@
-import BackgroundImage from 'gatsby-background-image';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
+import { getImage } from 'gatsby-plugin-image';
+import { BgImage } from 'gbimage-bridge';
 import React from 'react';
 import { HeaderSlideType } from '../../types/queryTypes';
+import Text from '../Text';
 import './style.scss';
 
-const HeaderSlide: React.FC<HeaderSlideType> = ({ backgroundImage }) => {
+const HeaderSlide: React.FC<HeaderSlideType> = ({
+  backgroundImage,
+  title,
+  description,
+}) => {
   const image = getImage(backgroundImage)!;
-  const bgImage = convertToBgImage(image);
 
   return (
-    <BackgroundImage {...bgImage} Tag="section">
-      <GatsbyImage
-        image={image}
-        alt={'testimage'}
-        objectFit="cover"
-        className="slide"
-      />
-    </BackgroundImage>
+    <BgImage image={image}>
+      <div className="slide">
+        <Text type="h2" fontWeight="700" className="slide__title">
+          {title.title}
+        </Text>
+        <Text type="p">{description.description}</Text>
+      </div>
+    </BgImage>
   );
 };
 
