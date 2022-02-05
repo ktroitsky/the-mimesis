@@ -1,9 +1,22 @@
 export type HeaderSlideType = {
-  backgroundImage: any
+  backgroundImage: any;
   title: {
-    title: string
-  }
+    title: string;
+  };
   description: {
-    description: string
-  }
-}
+    description: string;
+  };
+};
+
+export type ArticlePreviewType = {
+  title: string;
+  description: {
+    description: string;
+  };
+  slug: string;
+  id: string;
+  header: {
+    description?: string;
+    gatsbyImageData: any;
+  };
+};

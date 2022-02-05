@@ -1,9 +1,23 @@
+@import '../../theme/colors.scss';
+
 p,
 h1,
 h2,
 h3,
 h4 {
-  color: white;
+  color: $dark-text;
+}
+
+.dark {
+  color: $dark-text;
+}
+
+.light {
+  color: $light-text;
+}
+
+.caption {
+  color: $dark-caption-text;
 }
 
 .lora {
@@ -15,7 +29,7 @@ h4 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 h2 {
