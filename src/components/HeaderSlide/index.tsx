@@ -15,10 +15,12 @@ const HeaderSlide: React.FC<HeaderSlideType> = ({
   return (
     <BgImage image={image}>
       <div className="slide">
-        <Text type="h2" fontWeight="700" className="slide__title">
+        <Text type="h2" fontWeight="700" className="slide__title" color="light">
           {title.title}
         </Text>
-        <Text type="p">{description.description}</Text>
+        <Text type="p" color="light">
+          {description.description}
+        </Text>
       </div>
     </BgImage>
   );

@@ -7,6 +7,7 @@ type TextProps = {
   fontFamily?: 'lora' | 'spartan';
   fontWeight?: '400' | '700';
   className?: string;
+  color?: 'dark' | 'light' | 'caption';
 };
 
 const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
@@ -15,10 +16,11 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
   className,
   fontFamily,
   fontWeight = '400',
+  color = 'dark',
 }) => {
   const extendedClassNames = useMemo(
-    () => classNames(fontFamily, className, `weight-${fontWeight}`),
-    [className, fontFamily, fontWeight]
+    () => classNames(fontFamily, className, `weight-${fontWeight}`, color),
+    [className, color, fontFamily, fontWeight]
   );
 
   switch (type) {

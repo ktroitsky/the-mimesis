@@ -10,6 +10,7 @@ const NavigationBar = () => {
         fontFamily="spartan"
         fontWeight="700"
         className="navbar__title"
+        color="light"
       >
         THE MIMESIS
       </Text>
