@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/lora": "^4.5.2",
     "@fontsource/spartan": "^4.5.2",
+    "classnames": "^2.3.1",
     "dotenv": "^16.0.0",
     "gatsby": "^4.6.2",
     "gatsby-background-image": "^1.6.0",
