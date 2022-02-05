@@ -1,4 +1,4 @@
-@import "../../theme/colors.scss";
+@import '../../theme/colors.scss';
 
 .navbar {
   display: flex;
@@ -6,4 +6,9 @@
   background-color: $half-transparent-dark-background;
   height: 80px;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
