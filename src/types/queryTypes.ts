@@ -20,3 +20,9 @@ export type ArticlePreviewType = {
     gatsbyImageData: any;
   };
 };
+
+export interface ExtendedArticleType extends ArticlePreviewType {
+  body: {
+    body: string;
+  };
+}
