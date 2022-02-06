@@ -56,3 +56,30 @@ li {
 .weight-700 {
   font-weight: 700 !important;
 }
+
+span.note-wrapper {
+  position: relative;
+
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+
+    .note {
+      display: inline;
+    }
+  }
+}
+
+em.note {
+  background-color: $light-text;
+  border: $dark-caption-text 1px solid;
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  min-width: 250px;
+  padding: 15px;
+  max-width: 350px;
+}
