@@ -21,11 +21,13 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
   return (
     <div className={`${className}`}>
       <TMLink className="preview" href={`/${slug}`}>
-        <GatsbyImage
-          image={image}
-          alt={header.description ?? ''}
-          className="preview__image"
-        />
+        <div className="image-wrapper">
+          <GatsbyImage
+            image={image}
+            alt={header.description ?? ''}
+            className="preview__image image-wrapper__image"
+          />
+        </div>
         <Text type="h3" fontWeight="700" className="preview__title">
           {title}
         </Text>
