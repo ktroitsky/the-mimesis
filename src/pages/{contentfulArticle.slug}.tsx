@@ -2,9 +2,9 @@ import { graphql, PageProps } from 'gatsby';
 import React, { useMemo } from 'react';
 import Seo from '../components/seo';
 import { ExtendedArticleType, HeaderSlideType } from '../types/queryTypes';
-import Text from '../components/Text';
 import HeaderSlide from '../components/HeaderSlide';
 import NavigationBar from '../components/NavigationBar';
+import ArticlePageContent from '../components/ArticlePageContent';
 
 const ArticlePage: React.FC<
   PageProps<{ contentfulArticle: ExtendedArticleType }>
@@ -29,6 +29,8 @@ const ArticlePage: React.FC<
       <NavigationBar />
 
       <HeaderSlide {...headerSliderProps} alignment="center" />
+
+      <ArticlePageContent body={contentfulArticle.body.body} />
     </div>
   );
 };

@@ -4,7 +4,9 @@ p,
 h1,
 h2,
 h3,
-h4 {
+h4,
+li,
+blockquote {
   color: $dark-text;
 
   &:visited {
@@ -38,10 +40,13 @@ h3 {
 
 h2 {
   font-size: 36px;
+  line-height: 40px;
 }
 
-p {
-  font-size: 12px;
+p,
+li {
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .weight-400 {

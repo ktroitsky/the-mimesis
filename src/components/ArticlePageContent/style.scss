@@ -1,0 +1,36 @@
+@import '../../theme/constants.scss';
+@import '../../theme/colors.scss';
+
+.article-page {
+  margin: 100px 25%;
+
+  @media screen and (max-width: $break-tablet) {
+    margin: 80px 8%;
+  }
+}
+
+.article-page h2 {
+  margin: 30px 0 20px 0;
+}
+
+.article-page img {
+  width: 100%;
+  margin: 25px 0;
+}
+
+.article-page blockquote {
+  margin: 15px 20px 25px 20px;
+  padding: 10px 20px 10px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: $dark-caption-text 2px solid;
+  border-radius: 5px;
+}
+
+.article-page ul {
+  margin: 10px;
+}
+
+.article-page li {
+  margin: 10px;
+  list-style: initial;
+}
