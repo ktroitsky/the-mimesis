@@ -1,18 +1,31 @@
-const dotenv = require("dotenv")
+const dotenv = require('dotenv');
 
-dotenv.config()
+dotenv.config();
+
+const siteUrl = `https://themimesis.art/`;
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `The Mimesis`,
+    description: `A blog about literature, arts and culture`,
+    author: `@ktroitsky`,
+    siteUrl,
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      host: siteUrl,
+      sitemap: `${siteUrl}/sitemap.xml`,
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/404', '/404.html'],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,4 +61,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

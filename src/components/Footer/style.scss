@@ -1,0 +1,9 @@
+@import '../../theme/colors.scss';
+
+.footer {
+  min-height: 80px;
+  background-color: $grey-background;
+  align-items: center;
+  display: flex;
+  padding: 0 80px;
+}

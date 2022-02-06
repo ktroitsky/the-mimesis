@@ -2,9 +2,10 @@ import { graphql, PageProps } from 'gatsby';
 import React, { useMemo } from 'react';
 import Seo from '../components/seo';
 import { ExtendedArticleType, HeaderSlideType } from '../types/queryTypes';
-import Text from '../components/Text';
 import HeaderSlide from '../components/HeaderSlide';
 import NavigationBar from '../components/NavigationBar';
+import ArticlePageContent from '../components/ArticlePageContent';
+import Footer from '../components/Footer';
 
 const ArticlePage: React.FC<
   PageProps<{ contentfulArticle: ExtendedArticleType }>
@@ -24,11 +25,15 @@ const ArticlePage: React.FC<
 
   return (
     <div>
-      <Seo title="Home" />
+      <Seo title={contentfulArticle.title} />
 
       <NavigationBar />
 
       <HeaderSlide {...headerSliderProps} alignment="center" />
+
+      <ArticlePageContent body={contentfulArticle.body.body} />
+
+      <Footer />
     </div>
   );
 };
