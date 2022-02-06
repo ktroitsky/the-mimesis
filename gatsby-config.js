@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const siteUrl = `https://themimesis.art/`;
+const siteUrl = `https://themimesis.art`;
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       host: siteUrl,
-      sitemap: `${siteUrl}/sitemap.xml`,
+      sitemap: `${siteUrl}/sitemap`,
     },
     {
       resolve: 'gatsby-plugin-sitemap',
