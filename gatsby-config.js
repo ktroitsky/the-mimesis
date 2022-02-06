@@ -2,17 +2,30 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+const siteUrl = `https://themimesis.art/`;
+
 module.exports = {
   siteMetadata: {
     title: `The Mimesis`,
     description: `A blog about literature, arts and culture`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `@ktroitsky`,
+    siteUrl,
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      host: siteUrl,
+      sitemap: `${siteUrl}/sitemap.xml`,
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/404', '/404.html'],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
