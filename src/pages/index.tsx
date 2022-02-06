@@ -5,6 +5,7 @@ import { graphql, PageProps } from 'gatsby';
 import { ArticlePreviewType, HeaderSlideType } from '../types/queryTypes';
 import HeaderSlide from '../components/HeaderSlide';
 import ArticlePreviewList from '../components/ArticlePreviewList';
+import Footer from '../components/Footer';
 
 type DataType = {
   contentfulHeaderSlide: HeaderSlideType;
@@ -24,6 +25,8 @@ const IndexPage: React.FC<PageProps<DataType>> = ({
       <HeaderSlide {...contentfulHeaderSlide} />
 
       <ArticlePreviewList articles={allContentfulArticle.nodes} />
+
+      <Footer />
     </div>
   );
 };
