@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const serialize = require('./src/utils/configHelpers');
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         excludes: ['/404', '/404.html'],
+        query: serialize.sitemapQuery,
+        serialize: serialize.serialize,
       },
     },
     {
