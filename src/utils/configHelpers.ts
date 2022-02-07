@@ -36,11 +36,7 @@ export const serialize = ({ site, allSitePage, allContentfulArticle }) => {
     return {
       url,
       changefreq: isHome || article ? 'daily' : 'weekly',
-      lastmod: isHome
-        ? formatDate(new Date())
-        : article
-        ? article.updatedAt
-        : staticDate,
+      lastmod: isHome ? undefined : article ? article.updatedAt : staticDate,
       priority: isHome ? 0.9 : article ? 0.7 : 0.5,
     };
   });
