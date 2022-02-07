@@ -1,20 +1,11 @@
-const formatDate = (date: Date) =>
-  `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-
-const staticDate = '2022-02-07';
-
-export const sitemapQuery = `
+const sitemapQuery = `
 {
   allSitePage {
     nodes {
       path
     }
   }
-  site {
-    siteMetadata {
-      siteUrl
-    }
-  }
+
   allContentfulArticle {
     nodes {
       updatedAt
@@ -24,20 +15,31 @@ export const sitemapQuery = `
 }
 `;
 
-export const serialize = ({ site, allSitePage, allContentfulArticle }) => {
-  return allSitePage.nodes.map(({ path }: { path: string }) => {
-    const url = site.siteMetadata.siteUrl + path;
+const serialize = ({ path, updatedAt }) => {
+  const isHome = path === '/';
 
-    const isHome = path === '/';
-    const article = allContentfulArticle.nodes.find(
-      ({ slug }) => slug === path.slice(1, -1)
-    );
+  return {
+    url: path,
+    lastmod: updatedAt,
+    changefreq: isHome || updatedAt ? 'daily' : 'weekly',
+    priority: isHome ? 0.9 : updatedAt ? 0.7 : 0.5,
+  };
+};
 
-    return {
-      url,
-      changefreq: isHome || article ? 'daily' : 'weekly',
-      lastmod: isHome ? undefined : article ? article.updatedAt : staticDate,
-      priority: isHome ? 0.9 : article ? 0.7 : 0.5,
-    };
+const resolvePages = ({
+  allSitePage: { nodes: allPages },
+  allContentfulArticle: { nodes: allArticles },
+}) => {
+  const nodeMap = allArticles.reduce((acc, node) => {
+    const { slug } = node;
+    acc[slug] = node;
+
+    return acc;
+  }, {});
+
+  return allPages.map((page) => {
+    return { ...page, ...nodeMap[page.path.slice(1, -1)] };
   });
 };
+
+module.exports = { serialize, sitemapQuery, resolvePages };

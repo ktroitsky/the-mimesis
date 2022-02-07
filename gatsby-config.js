@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-const serialize = require('./src/utils/configHelpers');
+const serialize = require('./src/utils/configHelpers.ts');
 
 dotenv.config();
 
@@ -26,6 +26,8 @@ module.exports = {
       options: {
         excludes: ['/404', '/404.html'],
         query: serialize.sitemapQuery,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: serialize.resolvePages,
         serialize: serialize.serialize,
       },
     },
