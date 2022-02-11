@@ -11,7 +11,7 @@ interface HeaderSlideProps extends HeaderSlideType {
   alignment?: 'left' | 'center';
 }
 
-const HeaderSlide: React.FC<HeaderSlideProps> = ({
+const Header: React.FC<HeaderSlideProps> = ({
   backgroundImage,
   title,
   description,
@@ -37,4 +37,4 @@ const HeaderSlide: React.FC<HeaderSlideProps> = ({
   );
 };
 
-export default React.memo(HeaderSlide);
+export default React.memo(Header);

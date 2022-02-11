@@ -2,7 +2,7 @@ import { graphql, PageProps } from 'gatsby';
 import React, { useMemo } from 'react';
 import Seo from '../components/seo';
 import { ExtendedArticleType, HeaderSlideType } from '../types/queryTypes';
-import HeaderSlide from '../components/HeaderSlide';
+import Header from '../components/Header';
 import NavigationBar from '../components/NavigationBar';
 import ArticlePageContent from '../components/ArticlePageContent';
 import Footer from '../components/Footer';
@@ -29,7 +29,7 @@ const ArticlePage: React.FC<
 
       <NavigationBar />
 
-      <HeaderSlide {...headerSliderProps} alignment="center" />
+      <Header {...headerSliderProps} alignment="center" />
 
       <ArticlePageContent body={contentfulArticle.body.body} />
 

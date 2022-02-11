@@ -3,7 +3,7 @@ import Seo from '../components/seo';
 import NavigationBar from '../components/NavigationBar';
 import { graphql, PageProps } from 'gatsby';
 import { ArticlePreviewType, HeaderSlideType } from '../types/queryTypes';
-import HeaderSlide from '../components/HeaderSlide';
+import Header from '../components/Header';
 import ArticlePreviewList from '../components/ArticlePreviewList';
 import Footer from '../components/Footer';
 
@@ -22,7 +22,7 @@ const IndexPage: React.FC<PageProps<DataType>> = ({
       <Seo title="Home" />
       <NavigationBar />
 
-      <HeaderSlide {...contentfulHeaderSlide} />
+      <Header {...contentfulHeaderSlide} />
 
       <ArticlePreviewList articles={allContentfulArticle.nodes} />
 
