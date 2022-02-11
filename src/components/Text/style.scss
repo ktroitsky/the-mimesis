@@ -1,4 +1,5 @@
 @import '../../theme/colors.scss';
+@import '../../theme/constants.scss';
 
 p,
 h1,
@@ -60,6 +61,10 @@ li {
 span.note-wrapper {
   position: relative;
 
+  @media screen and (max-width: $break-mobile) {
+    position: initial;
+  }
+
   text-decoration: underline;
 
   &:hover {
@@ -82,4 +87,12 @@ em.note {
   min-width: 250px;
   padding: 15px;
   max-width: 350px;
+
+  @media screen and (max-width: $break-mobile) {
+    transform: none;
+    top: unset;
+    right: 0;
+    left: 0;
+    margin: 25px auto;
+  }
 }
