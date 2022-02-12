@@ -13,7 +13,7 @@ interface QuoteBlockProps extends Partial<QuoteType> {
 
 const QuoteBlock: React.FC<QuoteBlockProps> = ({
   backgroundColor = 'rgba(0,0,0,0.05)',
-  autorLink,
+  authorLink,
   author,
   body,
 }) => {
@@ -24,14 +24,14 @@ const QuoteBlock: React.FC<QuoteBlockProps> = ({
 
   const Author = useMemo(
     () =>
-      autorLink ? (
-        <TMLink href={autorLink}>
-          <Text className="quote-block__author">{author}</Text>
+      authorLink ? (
+        <TMLink href={authorLink} className="author-caption__link">
+          <Text className="author-caption">{author}</Text>
         </TMLink>
       ) : (
-        <Text className="quote-block__author">{author}</Text>
+        <Text className="author-caption">{author}</Text>
       ),
-    [author, autorLink]
+    [author, authorLink]
   );
 
   return (

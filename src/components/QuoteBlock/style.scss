@@ -18,10 +18,25 @@
     line-height: 34px;
     font-weight: 700;
   }
+}
 
-  &__author {
-    color: $demi-transparent-dark-background;
-    font-size: 20px;
-    margin-top: 10px;
+.author-caption {
+  $c: &;
+
+  color: $demi-transparent-dark-background;
+  font-size: 20px;
+  margin-top: 10px;
+
+  transition: color 0.3s;
+
+  &__link {
+    &:hover {
+      text-decoration: underline !important;
+      text-underline-offset: 3px;
+
+      #{$c} {
+        color: $dark-text;
+      }
+    }
   }
 }
