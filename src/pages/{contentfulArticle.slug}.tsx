@@ -25,7 +25,10 @@ const ArticlePage: React.FC<
 
   return (
     <div>
-      <Seo title={contentfulArticle.title} />
+      <Seo
+        title={contentfulArticle.title}
+        description={contentfulArticle.description.description ?? ''}
+      />
 
       <NavigationBar />
 
