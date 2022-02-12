@@ -1,8 +1,13 @@
 @import '../../theme/colors.scss';
+@import '../../theme/constants.scss';
 
 .quote-block {
   padding: 20px 20%;
   text-align: center;
+
+  @media screen and (max-width: $break-tablet) {
+    padding: 20px 10%;
+  }
 
   & p {
     font-size: 22px;
