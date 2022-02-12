@@ -2,7 +2,11 @@ import * as React from 'react';
 import Seo from '../components/seo';
 import NavigationBar from '../components/NavigationBar';
 import { graphql, PageProps } from 'gatsby';
-import { ArticlePreviewType, HeaderSlideType } from '../types/queryTypes';
+import {
+  ArticlePreviewType,
+  HeaderSlideType,
+  QuoteType,
+} from '../types/queryTypes';
 import Header from '../components/Header';
 import ArticlePreviewList from '../components/ArticlePreviewList';
 import Footer from '../components/Footer';
@@ -11,6 +15,9 @@ type DataType = {
   contentfulHeaderSlide: HeaderSlideType;
   allContentfulArticle: {
     nodes: ArticlePreviewType[];
+  };
+  allContentfulQuote: {
+    nodes: QuoteType[];
   };
 };
 
@@ -35,7 +42,7 @@ export const query = graphql`
   query IndexData {
     contentfulHeaderSlide {
       backgroundImage {
-        gatsbyImageData(height: 400)
+        gatsbyImageData(height: 550)
       }
       title {
         title
@@ -55,6 +62,15 @@ export const query = graphql`
         header {
           description
           gatsbyImageData(height: 240, width: 350)
+        }
+      }
+    }
+    allContentfulQuote {
+      nodes {
+        authorLink
+        author
+        body {
+          body
         }
       }
     }

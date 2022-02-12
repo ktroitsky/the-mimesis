@@ -9,6 +9,8 @@ import './style.scss';
 
 interface HeaderSlideProps extends HeaderSlideType {
   alignment?: 'left' | 'center';
+  isDarkened?: boolean;
+  isVerticallyCentered?: boolean;
 }
 
 const Header: React.FC<HeaderSlideProps> = ({
@@ -16,6 +18,8 @@ const Header: React.FC<HeaderSlideProps> = ({
   title,
   description,
   alignment = 'left',
+  isDarkened = false,
+  isVerticallyCentered = false,
 }) => {
   const image = getImage(backgroundImage)!;
 
@@ -24,9 +28,17 @@ const Header: React.FC<HeaderSlideProps> = ({
       <Layout
         className={classNames(`slide`, {
           slide_centered: alignment === 'center',
+          slide_darkened: isDarkened,
         })}
       >
-        <Text type="h2" fontWeight="700" className="slide__title" color="light">
+        <Text
+          type="h2"
+          fontWeight="700"
+          className={classNames('slide__title', {
+            'slide__title_centered-vertically': isVerticallyCentered,
+          })}
+          color="light"
+        >
           {title.title}
         </Text>
         <Text type="p" color="light">

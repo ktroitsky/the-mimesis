@@ -29,7 +29,12 @@ const ArticlePage: React.FC<
 
       <NavigationBar />
 
-      <Header {...headerSliderProps} alignment="center" />
+      <Header
+        {...headerSliderProps}
+        alignment="center"
+        isDarkened
+        isVerticallyCentered
+      />
 
       <ArticlePageContent body={contentfulArticle.body.body} />
 

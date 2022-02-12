@@ -2,10 +2,19 @@
 @import '../../theme/constants.scss';
 
 .slide {
-  height: 400px;
+  height: 550px;
+
+  &_darkened {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 
   &__title {
-    padding-top: 200px;
+    &_centered-vertically {
+      padding-top: 220px;
+    }
+
+    padding-top: 320px;
+
     padding-bottom: 20px;
   }
 
@@ -22,5 +31,5 @@ div:after {
 
   background-size: cover !important;
   width: 100%;
-  height: 400px !important;
+  height: 550px !important;
 }
