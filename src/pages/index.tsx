@@ -11,7 +11,7 @@ import Header from '../components/Header';
 import ArticlePreviewList from '../components/ArticlePreviewList';
 import Footer from '../components/Footer';
 import QuoteBlock from '../components/QuoteBlock';
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 
 type DataType = {
   contentfulHeaderSlide: HeaderSlideType;
@@ -26,25 +26,28 @@ type DataType = {
 const IndexPage: React.FC<PageProps<DataType>> = ({
   data: { contentfulHeaderSlide, allContentfulArticle, allContentfulQuote },
 }) => {
-  const randomQuote = useMemo(
-    () =>
-      allContentfulQuote.nodes[
-        Math.floor(Math.random() * allContentfulQuote.nodes.length)
-      ],
-    [allContentfulQuote.nodes]
-  );
+  const [randomQuote, setRandomQuote] = useState<QuoteType>();
+
+  useEffect(() => {
+    import('../../static/quotes.json').then(({ quotes }) => {
+      setRandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+    });
+  }, []);
 
   return (
     <div>
       <Seo title="Home" />
+
       <NavigationBar />
 
       <Header {...contentfulHeaderSlide} />
 
-      <QuoteBlock
-        {...randomQuote}
-        backgroundColor={contentfulHeaderSlide.quoteBackground}
-      />
+      {randomQuote && (
+        <QuoteBlock
+          {...randomQuote}
+          backgroundColor={contentfulHeaderSlide.quoteBackground}
+        />
+      )}
 
       <ArticlePreviewList articles={allContentfulArticle.nodes} />
 

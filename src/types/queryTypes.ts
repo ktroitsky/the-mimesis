@@ -31,7 +31,6 @@ export interface ExtendedArticleType extends ArticlePreviewType {
 export type QuoteType = {
   author: string;
   autorLink?: string;
-  body: {
-    body: string;
-  };
+
+  body: string;
 };

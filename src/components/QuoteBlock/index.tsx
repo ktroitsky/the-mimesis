@@ -36,7 +36,7 @@ const QuoteBlock: React.FC<QuoteBlockProps> = ({
   return (
     <div className="quote-block" style={containerStyle}>
       <QuoteIcon />
-      <Markdown source={body.body} />
+      <Markdown source={body} />
       {Author}
     </div>
   );
