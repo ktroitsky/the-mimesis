@@ -1,0 +1,18 @@
+@import '../../theme/colors.scss';
+
+.quote-block {
+  padding: 20px 20%;
+  text-align: center;
+
+  & p {
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 700;
+  }
+
+  &__author {
+    color: $demi-transparent-dark-background;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+}

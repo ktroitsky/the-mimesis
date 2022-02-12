@@ -6,6 +6,7 @@ export type HeaderSlideType = {
   description: {
     description: string;
   };
+  quoteBackground?: string;
 };
 
 export type ArticlePreviewType = {
@@ -26,3 +27,11 @@ export interface ExtendedArticleType extends ArticlePreviewType {
     body: string;
   };
 }
+
+export type QuoteType = {
+  author: string;
+  autorLink?: string;
+  body: {
+    body: string;
+  };
+};
