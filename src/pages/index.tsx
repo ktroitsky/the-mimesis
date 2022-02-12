@@ -24,7 +24,7 @@ type DataType = {
 };
 
 const IndexPage: React.FC<PageProps<DataType>> = ({
-  data: { contentfulHeaderSlide, allContentfulArticle, allContentfulQuote },
+  data: { contentfulHeaderSlide, allContentfulArticle },
 }) => {
   const [randomQuote, setRandomQuote] = useState<QuoteType>();
 
@@ -42,12 +42,10 @@ const IndexPage: React.FC<PageProps<DataType>> = ({
 
       <Header {...contentfulHeaderSlide} />
 
-      {randomQuote && (
-        <QuoteBlock
-          {...randomQuote}
-          backgroundColor={contentfulHeaderSlide.quoteBackground}
-        />
-      )}
+      <QuoteBlock
+        {...randomQuote}
+        backgroundColor={contentfulHeaderSlide.quoteBackground}
+      />
 
       <ArticlePreviewList articles={allContentfulArticle.nodes} />
 
@@ -81,15 +79,6 @@ export const query = graphql`
         header {
           description
           gatsbyImageData(height: 240, width: 350)
-        }
-      }
-    }
-    allContentfulQuote {
-      nodes {
-        authorLink
-        author
-        body {
-          body
         }
       }
     }

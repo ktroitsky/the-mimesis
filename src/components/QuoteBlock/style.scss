@@ -5,6 +5,10 @@
   padding: 20px 20%;
   text-align: center;
 
+  &_no-content {
+    min-height: 200px;
+  }
+
   @media screen and (max-width: $break-tablet) {
     padding: 20px 10%;
   }

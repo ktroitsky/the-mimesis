@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { CSSProperties, useMemo } from 'react';
 import QuoteIcon from '../../icons/QuoteIcon';
 import { QuoteType } from '../../types/queryTypes';
@@ -6,7 +7,7 @@ import Markdown from '../Text/Markdown';
 import TMLink from '../TMLink/TMLink';
 import './style.scss';
 
-interface QuoteBlockProps extends QuoteType {
+interface QuoteBlockProps extends Partial<QuoteType> {
   backgroundColor?: string;
 }
 
@@ -34,9 +35,12 @@ const QuoteBlock: React.FC<QuoteBlockProps> = ({
   );
 
   return (
-    <div className="quote-block" style={containerStyle}>
+    <div
+      className={classNames('quote-block', { 'quote-block_no-content': !body })}
+      style={containerStyle}
+    >
       <QuoteIcon />
-      <Markdown source={body} />
+      <Markdown source={body ?? ''} />
       {Author}
     </div>
   );
