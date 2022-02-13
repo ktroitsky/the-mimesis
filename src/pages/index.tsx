@@ -68,7 +68,7 @@ export const query = graphql`
       }
       quoteBackground
     }
-    allContentfulArticle {
+    allContentfulArticle(sort: { fields: createdAt, order: DESC }) {
       nodes {
         title
         description {
