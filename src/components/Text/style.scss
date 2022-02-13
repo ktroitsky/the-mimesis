@@ -15,6 +15,10 @@ blockquote {
   }
 }
 
+em {
+  font-style: italic;
+}
+
 .dark {
   color: $dark-text;
 }
@@ -33,6 +37,10 @@ blockquote {
 
 .spartan {
   font-family: Spartan, sans-serif !important;
+}
+
+.caption {
+  text-align: center;
 }
 
 h3 {
