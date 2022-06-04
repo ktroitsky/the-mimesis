@@ -15,7 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   grid-column-gap: 30px;
-  // justify-content: space-between;
+  justify-content: space-between;
 
   @media screen and (max-width: $break-mobile) {
     align-items: center;
