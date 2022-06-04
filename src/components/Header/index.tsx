@@ -32,7 +32,7 @@ const Header: React.FC<HeaderSlideProps> = ({
         })}
       >
         <Text
-          type="h2"
+          type="h1"
           fontWeight="700"
           className={classNames('slide__title', {
             'slide__title_centered-vertically': isVerticallyCentered,
