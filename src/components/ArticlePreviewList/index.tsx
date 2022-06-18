@@ -18,7 +18,7 @@ const ArticlePreviewList: React.FC<ArticlePreviewListProps> = ({
 
   return (
     <Layout className="wrapper">
-      <Text type="h2" fontWeight="700" className="wrapper__title">
+      <Text type="p" fontWeight="700" className="wrapper__title">
         Latest articles
       </Text>
       <div className="list">{articles.map(renderArticlePreview)}</div>
