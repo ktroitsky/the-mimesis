@@ -28,7 +28,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
             className="preview__image image-wrapper__image"
           />
         </div>
-        <Text type="h3" fontWeight="700" className="preview__title">
+        <Text type="p" fontWeight="700" className="preview__title">
           {title}
         </Text>
         <Text color="caption">{description.description}</Text>
