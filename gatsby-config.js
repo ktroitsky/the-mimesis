@@ -12,6 +12,7 @@ module.exports = {
     author: `@ktroitsky`,
     siteUrl,
   },
+  trailingSlash: 'always',
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
