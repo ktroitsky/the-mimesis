@@ -58,7 +58,11 @@ export const query = graphql`
   query IndexData {
     contentfulHeaderSlide {
       backgroundImage {
-        gatsbyImageData(height: 550, placeholder: BLURRED)
+        gatsbyImageData(
+          height: 550
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
       title {
         title
@@ -78,7 +82,12 @@ export const query = graphql`
         id
         header {
           description
-          gatsbyImageData(height: 240, width: 350, placeholder: BLURRED)
+          gatsbyImageData(
+            height: 240
+            width: 350
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }

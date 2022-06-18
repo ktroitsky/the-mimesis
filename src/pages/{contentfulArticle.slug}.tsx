@@ -57,7 +57,11 @@ export const query = graphql`
       id
       header {
         description
-        gatsbyImageData(height: 400, placeholder: BLURRED)
+        gatsbyImageData(
+          height: 400
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
       body {
         body
