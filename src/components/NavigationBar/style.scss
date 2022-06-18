@@ -1,10 +1,11 @@
 @import '../../theme/colors.scss';
+@import '../../theme/constants.scss';
 
 .navbar {
   display: flex;
   flex-direction: row;
   background-color: $half-transparent-dark-background;
-  height: 80px;
+  height: $navigation-bar-height;
   width: 100%;
   position: fixed;
   top: 0;
