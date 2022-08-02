@@ -12,6 +12,7 @@ import ArticlePreviewList from '../components/ArticlePreviewList';
 import Footer from '../components/Footer';
 import QuoteBlock from '../components/QuoteBlock';
 import { useEffect, useState } from 'react';
+import quotes from '../../static/quotes';
 
 type DataType = {
   contentfulHeaderSlide: HeaderSlideType;
@@ -29,9 +30,9 @@ const IndexPage: React.FC<PageProps<DataType>> = ({
   const [randomQuote, setRandomQuote] = useState<QuoteType>();
 
   useEffect(() => {
-    import('../../static/quotes.json').then(({ quotes }) => {
-      setRandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
-    });
+    setRandomQuote(
+      quotes.quotes[Math.floor(Math.random() * quotes.quotes.length)]
+    );
   }, []);
 
   return (
