@@ -23,6 +23,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
       <TMLink className="preview" href={`/${slug}`}>
         <div className="image-wrapper">
           <GatsbyImage
+            loading="lazy"
             image={image}
             alt={header.description ?? ''}
             className="preview__image image-wrapper__image"
