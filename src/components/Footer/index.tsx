@@ -5,7 +5,7 @@ import Text from '../Text';
 const Footer = () => {
   return (
     <div className="footer">
-      <Text color="light">&copy; The Mimesis 2022</Text>
+      <Text color="light">&copy; The Mimesis 2023</Text>
     </div>
   );
 };
