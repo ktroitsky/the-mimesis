@@ -92,7 +92,7 @@ function Seo({
         },
       ].concat(meta)}
     >
-      <Script>{WOOPRA_SCRIPT}</Script>
+      <Script id="woopra-analytics">{WOOPRA_SCRIPT}</Script>
     </Helmet>
   );
 }
