@@ -60,7 +60,7 @@ export const query = graphql`
     contentfulHeaderSlide {
       backgroundImage {
         gatsbyImageData(
-          height: 550
+          height: 700
           placeholder: BLURRED
           formats: [AUTO, WEBP, AVIF]
         )
