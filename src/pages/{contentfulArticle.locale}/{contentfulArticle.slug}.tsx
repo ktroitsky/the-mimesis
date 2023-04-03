@@ -1,11 +1,11 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { useMemo } from 'react';
-import Seo from '../components/seo';
-import { ExtendedArticleType, HeaderSlideType } from '../types/queryTypes';
-import Header from '../components/Header';
-import NavigationBar from '../components/NavigationBar';
-import ArticlePageContent from '../components/ArticlePageContent';
-import Footer from '../components/Footer';
+import Seo from '../../components/seo';
+import { ExtendedArticleType, HeaderSlideType } from '../../types/queryTypes';
+import Header from '../../components/Header';
+import NavigationBar from '../../components/NavigationBar';
+import ArticlePageContent from '../../components/ArticlePageContent';
+import Footer from '../../components/Footer';
 
 const ArticlePage: React.FC<
   PageProps<{ contentfulArticle: ExtendedArticleType }>
@@ -26,21 +26,17 @@ const ArticlePage: React.FC<
   return (
     <div>
       <Seo
-        title={contentfulArticle.title}
+        title={contentfulArticle?.title}
         description={contentfulArticle.description.description ?? ''}
       />
-
       <NavigationBar />
-
       <Header
         {...headerSliderProps}
         alignment="center"
         isDarkened
         isVerticallyCentered
       />
-
       <ArticlePageContent body={contentfulArticle.body.body} />
-
       <Footer />
     </div>
   );
@@ -50,6 +46,7 @@ export const query = graphql`
   query Article($id: String!) {
     contentfulArticle(id: { eq: $id }) {
       title
+      locale
       description {
         description
       }

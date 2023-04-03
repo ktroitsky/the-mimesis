@@ -1,4 +1,4 @@
-const quotes = {
+const enQuotes = {
   quotes: [
     {
       author: 'Oscar Wilde "The Picture of Dorian Gray"',
@@ -14,10 +14,6 @@ const quotes = {
       body: 'It is only with the heart that one can see rightly; what is essential is invisible to the eye.',
     },
     {
-      author: 'Arthur Miller "Death of a Salesman"',
-      body: 'Funny, y’know? After all the highways, and the trains, and the appointments, and the years, you end up worth more dead than alive.',
-    },
-    {
       author: 'Jack Kerouac "On the Road"',
       body: 'God was gone; it was the silence of his departure.',
     },
@@ -31,5 +27,32 @@ const quotes = {
     },
   ],
 };
+
+const ukQuotes = {
+  quotes: [
+    {
+      author: `Іван Семесюк "Еволюція або смерть!"`,
+      body: 'Ти диви, яка кумедна історія, – промай­нуло в голові у павіана. – Миша у спортивному костюмі. Чого б це раптом? Але, звичайно, кож­ному своє. Як казав покійний папуга Екхарт: око, яким миша дивиться на тебе, і око, яким ти диви­шся на мишу – одне й те саме око!',
+    },
+    {
+      author: 'Валерій Шевчук "Дім на горі"',
+      body: 'Було б дуже сумно в цьому світі, коли б у ньому не можна було б чогось змінити. Але ще сумніше в ньому було б, коли б не було у ньому нічого незмінного',
+    },
+    {
+      author: 'Карел Чапек "Війна з саламандрами"',
+      body: 'Ніяких чортів нема. А якби були, то скидались би на європейців. То, мабуть, була якась велика рибина абощо.',
+    },
+    {
+      author: 'Карел Чапек "Війна з саламандрами"',
+      body: '3 наукового погляду це безглуздя. Бо чорт не може жити у воді. Що йому там робити?',
+    },
+    {
+      author: 'Карел Чапек "Війна з саламандрами"',
+      body: 'Хай саламандри, аби не марксисти.',
+    },
+  ],
+};
+
+const quotes = { en: enQuotes, uk: ukQuotes };
 
 export default quotes;

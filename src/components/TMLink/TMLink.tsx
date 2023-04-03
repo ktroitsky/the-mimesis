@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 import './style.scss';
 
@@ -13,6 +13,7 @@ const TMLink: React.FC<React.PropsWithChildren<TMLinkProps>> = ({
   className,
 }) => {
   return (
+    // @ts-expect-error
     <Link className={`${className}`} to={href}>
       {children}
     </Link>

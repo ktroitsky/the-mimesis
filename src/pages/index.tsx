@@ -13,6 +13,7 @@ import Footer from '../components/Footer';
 import QuoteBlock from '../components/QuoteBlock';
 import { useLayoutEffect, useState } from 'react';
 import quotes from '../../static/quotes';
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 type DataType = {
   contentfulHeaderSlide: HeaderSlideType;
@@ -28,16 +29,21 @@ const IndexPage: React.FC<PageProps<DataType>> = ({
   data: { contentfulHeaderSlide, allContentfulArticle },
 }) => {
   const [randomQuote, setRandomQuote] = useState<QuoteType>();
+  const { t } = useTranslation();
+  const { language } = useI18next();
 
   useLayoutEffect(() => {
+    if (!language) return;
+    const rightQuotes = quotes?.[language]?.quotes;
+
     setRandomQuote(
-      quotes.quotes[Math.floor(Math.random() * quotes.quotes.length)]
+      rightQuotes[Math.floor(Math.random() * rightQuotes?.length)]
     );
-  }, []);
+  }, [language]);
 
   return (
     <div>
-      <Seo title="Home" />
+      <Seo title={t('Home')} />
 
       <NavigationBar />
 
@@ -56,8 +62,18 @@ const IndexPage: React.FC<PageProps<DataType>> = ({
 };
 
 export const query = graphql`
-  query IndexData {
-    contentfulHeaderSlide {
+  query IndexData($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
+    contentfulHeaderSlide(locale: { eq: $language }) {
       backgroundImage {
         gatsbyImageData(
           height: 700
@@ -73,7 +89,10 @@ export const query = graphql`
       }
       quoteBackground
     }
-    allContentfulArticle(sort: { fields: createdAt, order: DESC }) {
+    allContentfulArticle(
+      sort: { fields: createdAt, order: DESC }
+      filter: { locale: { eq: $language } }
+    ) {
       nodes {
         title
         description {

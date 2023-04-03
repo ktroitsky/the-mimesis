@@ -42,6 +42,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/static/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -68,6 +75,32 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`en`, `uk`],
+        defaultLanguage: `en`,
+        siteUrl: siteUrl,
+        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
+        trailingSlash: 'always',
+        // you can pass any i18next options
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        pages: [
+          {
+            matchPath: '/:lang/:id',
+            getLanguageFromPath: true,
+            excludeLanguages: ['en', 'uk'],
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -9,6 +9,11 @@ export type HeaderSlideType = {
   quoteBackground?: string;
 };
 
+export enum Locale {
+  EN = 'en',
+  UK = 'uk',
+}
+
 export type ArticlePreviewType = {
   title: string;
   description: {
@@ -20,6 +25,7 @@ export type ArticlePreviewType = {
     description?: string;
     gatsbyImageData: any;
   };
+  locale: Locale;
 };
 
 export interface ExtendedArticleType extends ArticlePreviewType {

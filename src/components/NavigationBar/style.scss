@@ -6,7 +6,6 @@
   flex-direction: row;
   background-color: $half-transparent-dark-background;
   height: $navigation-bar-height;
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,5 +14,17 @@
 
   &__title {
     margin: auto 0;
+  }
+
+  &__language-button {
+    font-family: Spartan, sans-serif !important;
+    position: absolute;
+    right: 30px;
+    top: 28px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
   }
 }

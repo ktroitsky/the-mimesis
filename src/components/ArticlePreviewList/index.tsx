@@ -4,6 +4,7 @@ import ArticlePreview from '../ArticlePreview';
 import Layout from '../Layout';
 import Text from '../Text';
 import './style.scss';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 type ArticlePreviewListProps = {
   articles: ArticlePreviewType[];
@@ -19,7 +20,7 @@ const ArticlePreviewList: React.FC<ArticlePreviewListProps> = ({
   return (
     <Layout className="wrapper">
       <Text type="p" fontWeight="700" className="wrapper__title">
-        Latest articles
+        <Trans>Latest articles</Trans>
       </Text>
       <div className="list">{articles.map(renderArticlePreview)}</div>
     </Layout>
