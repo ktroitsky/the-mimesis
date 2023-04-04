@@ -1,6 +1,26 @@
 const enQuotes = {
   quotes: [
     {
+      author: 'Mark Twain "Adventures of Huckleberry Finn"',
+      body: 'Persons attempting to find a motive in this narrative will be prosecuted; persons attempting to find a moral in it will be banished; persons attempting to find a plot in it will be shot.',
+    },
+    {
+      author: 'Mark Twain "Adventures of Huckleberry Finn"',
+      body: 'Jim said bees wouldn’t sting idiots; but I didn’t believe that, because I had tried them lots of times myself, and they wouldn’t sting me.',
+    },
+    {
+      author: 'Karel Capek "The War with the Newts"',
+      body: "Listen, demons don't exist.\n And if they did exist they would look like Europeans.",
+    },
+    {
+      author: 'Karel Capek "The War with the Newts"',
+      body: "This is scientific nonsense. A demon can't live in water anyway. What would he be doing in the water?",
+    },
+    {
+      author: 'Karel Capek "The War with the Newts"',
+      body: "It's alright for them to be newts just as long as they're not Marxists",
+    },
+    {
       author: 'Oscar Wilde "The Picture of Dorian Gray"',
       body: 'All art is quite useless',
       authorLink: '/what-is-aestheticism',
@@ -12,14 +32,6 @@ const enQuotes = {
     {
       author: 'Antoine de Saint-Exupery "The little prince"',
       body: 'It is only with the heart that one can see rightly; what is essential is invisible to the eye.',
-    },
-    {
-      author: 'Jack Kerouac "On the Road"',
-      body: 'God was gone; it was the silence of his departure.',
-    },
-    {
-      author: 'James Joyce "The Dead"',
-      body: 'His soul swooned slowly as he heard the snow falling faintly through the universe and faintly falling, like the descent of their last end, upon all the living and the dead.',
     },
     {
       author: 'Samuel Beckett "Waiting for Godot"',
@@ -49,6 +61,18 @@ const ukQuotes = {
     {
       author: 'Карел Чапек "Війна з саламандрами"',
       body: 'Хай саламандри, аби не марксисти.',
+    },
+    {
+      author: 'Марк Твен "Пригоди Гекльберрі Фінна"',
+      body: 'Осіб, які спробують знайти в цій оповіді мотив, буде віддано під суд; осіб, які спробують знайти в ній мораль, буде заслано; осіб, які спробують знайти в ній сюжет, буде розстріляно.',
+    },
+    {
+      author: 'Франсуа Рабле "Гаргантюа і Пантагрюель"',
+      body: "Учився, як ви самі здорові, знаєте, Пантагрюель старанно і добре встигав, бо голова його була набита та ще й добре підбита, а обсяг його пам'яти дорівнював двадцяти бочкам із-під оливкової олі",
+    },
+    {
+      author: 'Міґель де Сервантес "Дон Кіхот"',
+      body: 'І так наш гідальго у те читання вкинувся, що знай читав, як день, так ніч, од рання до смеркання, а од смеркання знов до рання, і з того недосипу та з того перечиту мозок його до решти висох — ізсунувся бідаха з глузду',
     },
   ],
 };
