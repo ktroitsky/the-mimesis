@@ -26,6 +26,7 @@ export type ArticlePreviewType = {
     gatsbyImageData: any;
   };
   locale: Locale;
+  hidden?: boolean;
 };
 
 export interface ExtendedArticleType extends ArticlePreviewType {

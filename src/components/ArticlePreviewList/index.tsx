@@ -17,12 +17,14 @@ const ArticlePreviewList: React.FC<ArticlePreviewListProps> = ({
     (article: ArticlePreviewType) => JSX.Element
   >((article) => <ArticlePreview {...article} className="list__item" />, []);
 
+  const filteredArticles = articles.filter((item) => !item.hidden);
+
   return (
     <Layout className="wrapper">
       <Text type="p" fontWeight="700" className="wrapper__title">
         <Trans>Latest articles</Trans>
       </Text>
-      <div className="list">{articles.map(renderArticlePreview)}</div>
+      <div className="list">{filteredArticles.map(renderArticlePreview)}</div>
     </Layout>
   );
 };

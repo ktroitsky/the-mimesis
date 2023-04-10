@@ -90,7 +90,7 @@ export const query = graphql`
       quoteBackground
     }
     allContentfulArticle(
-      sort: { fields: createdAt, order: DESC }
+      sort: { fields: customCreatedAt, order: DESC }
       filter: { locale: { eq: $language } }
     ) {
       nodes {
@@ -98,6 +98,7 @@ export const query = graphql`
         description {
           description
         }
+        hidden
         slug
         id
         header {
