@@ -11,6 +11,12 @@
   @media screen and (max-width: $break-mobile) {
     margin: 80px 8%;
   }
+
+  &__markdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .article-page h2 {
@@ -23,11 +29,15 @@
 }
 
 .article-page blockquote {
-  margin: 15px 20px 25px 20px;
+  margin: 25px 20px 25px 20px;
   padding: 10px 20px 10px 20px;
   background-color: rgba(0, 0, 0, 0.03);
   border: $dark-caption-text 1px solid;
   border-radius: 5px;
+}
+
+.article-page h2 {
+  align-self: flex-start;
 }
 
 .article-page ul {

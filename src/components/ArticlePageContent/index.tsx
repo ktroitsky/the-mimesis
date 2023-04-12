@@ -9,7 +9,7 @@ type ArticlePageContentProps = {
 const ArticlePageContent: React.FC<ArticlePageContentProps> = ({ body }) => {
   return (
     <div className="article-page">
-      <Markdown source={body} />
+      <Markdown className="article-page__markdown" source={body} />
     </div>
   );
 };
