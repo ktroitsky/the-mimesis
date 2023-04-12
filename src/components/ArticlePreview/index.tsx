@@ -15,8 +15,11 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
   className,
   description,
   slug,
+  previewImage,
 }) => {
-  const image = getImage(header.gatsbyImageData)!;
+  const image = getImage(
+    previewImage?.gatsbyImageData ?? header.gatsbyImageData
+  )!;
 
   return (
     <div className={`${className}`}>

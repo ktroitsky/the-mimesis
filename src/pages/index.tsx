@@ -110,6 +110,15 @@ export const query = graphql`
             formats: [AUTO, WEBP, AVIF]
           )
         }
+        previewImage {
+          description
+          gatsbyImageData(
+            height: 240
+            width: 350
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
       }
     }
   }
