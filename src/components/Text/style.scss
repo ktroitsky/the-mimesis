@@ -8,7 +8,7 @@ h3,
 h4,
 li,
 blockquote {
-  color: $dark-text;
+  color: $black-text;
 
   &:visited {
     text-decoration: none;
@@ -20,7 +20,7 @@ em {
 }
 
 .dark {
-  color: $dark-text;
+  color: $black-text;
 }
 
 .light {
