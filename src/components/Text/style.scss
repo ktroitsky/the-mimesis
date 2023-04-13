@@ -101,6 +101,8 @@ em.note {
   min-width: 250px;
   padding: 15px;
   max-width: 350px;
+  font-style: normal;
+  font-weight: 400;
 
   @media screen and (max-width: $break-mobile) {
     transform: none;
