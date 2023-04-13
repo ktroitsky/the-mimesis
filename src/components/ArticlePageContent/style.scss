@@ -15,7 +15,6 @@
   &__markdown {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -34,6 +33,7 @@
   background-color: rgba(0, 0, 0, 0.03);
   border: $dark-caption-text 1px solid;
   border-radius: 5px;
+  align-self: center !important;
 }
 
 .article-page h2 {
