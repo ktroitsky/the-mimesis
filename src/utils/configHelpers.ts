@@ -11,6 +11,7 @@ const sitemapQuery = `
       updatedAt
       slug
       locale
+      hidden
     }
   }
 }
@@ -32,6 +33,10 @@ const resolvePages = ({
   allContentfulArticle: { nodes: allArticles },
 }) => {
   const nodeMap = allArticles.reduce((acc, node) => {
+    if (node.hidden) {
+      return acc;
+    }
+
     const { slug, locale } = node;
     acc[locale === 'en' ? slug : `uk/${slug}`] = node;
 
