@@ -11,6 +11,7 @@ interface HeaderSlideProps extends HeaderSlideType {
   alignment?: 'left' | 'center';
   isDarkened?: boolean;
   isVerticallyCentered?: boolean;
+  titleClassName?: string;
 }
 
 const Header: React.FC<HeaderSlideProps> = ({
@@ -20,6 +21,7 @@ const Header: React.FC<HeaderSlideProps> = ({
   alignment = 'left',
   isDarkened = false,
   isVerticallyCentered = false,
+  titleClassName,
 }) => {
   const image = getImage(backgroundImage)!;
 
@@ -34,7 +36,7 @@ const Header: React.FC<HeaderSlideProps> = ({
         <Text
           type="h1"
           fontWeight="700"
-          className={classNames('slide__title', {
+          className={classNames('slide__title', titleClassName, {
             'slide__title_centered-vertically': isVerticallyCentered,
           })}
           color="light"

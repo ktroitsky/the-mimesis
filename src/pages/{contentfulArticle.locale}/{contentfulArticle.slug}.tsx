@@ -1,11 +1,11 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { useMemo } from 'react';
-import Seo from '../../components/seo';
-import { ExtendedArticleType, HeaderSlideType } from '../../types/queryTypes';
-import Header from '../../components/Header';
-import NavigationBar from '../../components/NavigationBar';
 import ArticlePageContent from '../../components/ArticlePageContent';
 import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import NavigationBar from '../../components/NavigationBar';
+import Seo from '../../components/seo';
+import { ExtendedArticleType, HeaderSlideType } from '../../types/queryTypes';
 
 const ArticlePage: React.FC<
   PageProps<{ contentfulArticle: ExtendedArticleType }>
