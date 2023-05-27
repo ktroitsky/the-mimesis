@@ -6,4 +6,10 @@
   align-items: center;
   display: flex;
   padding: 0 80px;
+  align-items: center;
+
+  &__social {
+    margin-left: 20px;
+    margin-top: 2px;
+  }
 }
