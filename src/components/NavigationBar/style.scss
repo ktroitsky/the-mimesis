@@ -16,15 +16,19 @@
     margin: auto 0;
   }
 
-  &__language-button {
-    font-family: Spartan, sans-serif !important;
+  &__right-block {
     position: absolute;
-    right: 30px;
+    right: 0px;
     top: 28px;
+  }
+
+  &__button {
+    font-family: Spartan, sans-serif !important;
     background-color: transparent;
     border: none;
     font-size: 18px;
     color: white;
     font-weight: 600;
+    margin-right: 30px;
   }
 }

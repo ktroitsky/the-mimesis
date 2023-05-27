@@ -2,8 +2,8 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 import { Locale } from '../../types/queryTypes';
 import Layout from '../Layout';
-import Text from '../Text';
 import TMLink from '../TMLink/TMLink';
+import Text from '../Text';
 import './style.scss';
 
 const NavigationBar = () => {
@@ -20,9 +20,20 @@ const NavigationBar = () => {
         </Text>
       </TMLink>
 
-      <button className="navbar__language-button" onClick={toggleLanguage}>
-        {otherLanguage.toUpperCase()}
-      </button>
+      <div className="navbar__right-block">
+        <a
+          target="_blank"
+          className="navbar__button"
+          href="https://www.youtube.com/@the.mimesis"
+          rel="noreferrer"
+        >
+          YOUTUBE
+        </a>
+
+        <button className="navbar__button" onClick={toggleLanguage}>
+          {otherLanguage.toUpperCase()}
+        </button>
+      </div>
     </Layout>
   );
 };
