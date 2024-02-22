@@ -7,7 +7,7 @@ import './style.scss';
 const Footer = () => {
   return (
     <div className="footer">
-      <Text color="light">&copy; The Mimesis 2023</Text>
+      <Text color="light">&copy; The Mimesis 2024</Text>
 
       <a href="https://www.youtube.com/@the.mimesis" className="footer__social">
         <YoutubeIcon />
